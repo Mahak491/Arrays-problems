@@ -1,7 +1,7 @@
 class Solution {
 public:
-    
-    int mod =(int)(1e9+7);
+    //better tell this in interview
+int mod =(int)(1e9+7);
 int findWaysUtil(int ind, int target, vector<int>& arr, vector<vector<int>> &dp){
     if(ind == 0){
         if(target==0 && arr[0]==0)
@@ -26,8 +26,7 @@ int findWaysUtil(int ind, int target, vector<int>& arr, vector<vector<int>> &dp)
     return dp[ind][target]= (notTaken + taken)%mod;
 }
     
-    int findTargetSumWays(vector<int>& arr,int target) {
-            
+    int findTargetSumWays(vector<int>& arr,int target) {       
     int totSum = 0;
     int n = arr.size();
     for(int i=0; i<arr.size();i++){
