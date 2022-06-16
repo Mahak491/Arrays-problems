@@ -9,22 +9,7 @@ using namespace std;
 
 class Solution{
 public:
-// int f(int N,int W,int val[],int wt[],vector<vector<int>> dp){
-//     if(N == 0){
-//         return ((W/wt[0])*val[0]);
-//     }
-    
-//     if(dp[N][W] != -1) return dp[N][W];
-    
-//     int notTake = 0 + f(N-1,W,val,wt,dp);
-    
-//     int take = INT_MIN;
-//     if(wt[N] <= W)
-//     take = val[N] + f(N,W-wt[N],val,wt,dp);
-    
-//     return dp[N][W] = max(take,notTake);
-    
-// }
+
 
     int knapSack(int N, int W, int val[], int wt[])
     {
