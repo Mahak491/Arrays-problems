@@ -37,8 +37,8 @@ public: //memoization
      return dp[0][1];
     }*/
     
-    //best solution
-        int n = prices.size();
+    //better solution
+       /* int n = prices.size();
         vector<int> ahead(2,0),cur(2,0);
         ahead[0] = ahead[1] = 0;
         for(int ind=n-1;ind>=0;ind--)
@@ -55,5 +55,14 @@ public: //memoization
             ahead = cur;
      }
         return ahead[1];
-    } 
+    } */
+        
+        // best soln
+        
+        int maxprofit = 0;
+        for(int i=1;i<prices.size();i++){
+            maxprofit+=max(prices[i]-prices[i-1],0);
+        }
+        return maxprofit;
+    }
 };
