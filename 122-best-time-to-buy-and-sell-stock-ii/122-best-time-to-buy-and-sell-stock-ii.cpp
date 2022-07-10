@@ -7,7 +7,7 @@ public: //memoization
         if(dp[ind][buy] != -1) return dp[ind][buy];
         
         if(buy == 1)
-            return dp[ind][buy] = max(-prices[ind] + f(ind+1,0,n,prices,dp),f(ind+1,1,n,prices,dp));
+            return dp[ind][buy] = max(-prices[ind] + f(ind+1,0,n,prices,dp),0+f(ind+1,1,n,prices,dp));
         else
             return dp[ind][buy] = max(prices[ind] + f(ind+1,1,n,prices,dp),0 + f(ind+1,0,n,prices,dp));
     }*/
@@ -18,7 +18,7 @@ public: //memoization
         return f(0,1,n,prices,dp);*/
         
         // tabulation
-            /* int n = prices.size();
+    /* int n = prices.size();
      vector<vector<int>>dp(n+1,vector<int>(2,0));
      dp[n][0] = dp[n][1] = 0;
      
@@ -57,8 +57,7 @@ public: //memoization
         return ahead[1];
     } */
         
-        // best soln
-        
+        // optimal solution
         int maxprofit = 0;
         for(int i=1;i<prices.size();i++){
             maxprofit+=max(prices[i]-prices[i-1],0);
