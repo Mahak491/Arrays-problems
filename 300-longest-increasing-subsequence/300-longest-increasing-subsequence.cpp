@@ -20,7 +20,7 @@ public:
         
         //tabulation
         
-        vector<vector<int>> dp(n+1,vector<int>(n+1,0));
+        /*vector<vector<int>> dp(n+1,vector<int>(n+1,0));
         
         for(int ind = n-1; ind >= 0; ind--){
             for(int prev = ind-1; prev >= -1; prev--){
@@ -32,6 +32,18 @@ public:
              dp[ind][prev+1] = len;
             }
         }
-         return dp[0][-1+1];
+         return dp[0][-1+1];*/
+        
+        vector<int> dp(n,1);
+        int maxi = 1;
+        for(int i=0;i<n;i++){
+            for(int prev=0;prev<=i-1;prev++){
+                if(nums[prev] < nums[i]){
+                    dp[i] = max(dp[i],1+dp[prev]);
+                }
+            }
+            maxi = max(maxi,dp[i]);
+        }
+        return maxi;
     }
 };
