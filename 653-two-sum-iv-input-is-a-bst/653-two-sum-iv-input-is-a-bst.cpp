@@ -21,7 +21,7 @@ public:
     int next() {
       TreeNode* top = st.top();
         st.pop();
-        if(!reverse){
+        if(!reverse){ //true
         pushAll(top->right);
         }
         else
@@ -56,8 +56,8 @@ public:
         if(root == NULL) return false;
         BSTIterator l(root,false);
         BSTIterator r(root,true);
-        int i = l.next();
-        int j = r.next();
+        int i = l.next(); //next
+        int j = r.next(); //before
         while(i < j){
             if(i+j == k) return true;
             else if(i+j < k) i = l.next();
