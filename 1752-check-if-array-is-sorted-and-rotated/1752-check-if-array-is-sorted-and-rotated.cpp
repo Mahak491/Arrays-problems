@@ -7,6 +7,11 @@ public:
            if(nums[i] > nums[(i+1)%n])
                cnt++;
        }
-        return (cnt<=1);
+       if (cnt <= 1) {
+         return true;
+        } else {
+       return false;
+}
+
     }
 };
